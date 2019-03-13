@@ -1,0 +1,8 @@
+---
+# tasks file for vagrant-ubuntu-guest-fix
+- name: Install libpam-systemd package to fix hang during vagrant halt on xenial guest
+  become: true
+  apt:
+    update_cache: true
+    name: libpam-systemd
+    state: present
